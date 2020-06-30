@@ -1,6 +1,11 @@
 class Settings:
     def __init__(self):
         # Screen settings
-        self.WIDTH = 800
+        self.WIDTH = 1200
         self.HEIGHT = 800
         self.bg_color = (0, 0, 0)
+
+        # Firework settings
+        self.s_radius = 5
+        self.gravity = 6
+        self.n_shots = 1
