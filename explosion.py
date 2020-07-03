@@ -13,7 +13,7 @@ class Explosion:
 
         # intialize particles
         self.center = center
-        self.n_particles = self.settings.n_particles
+        self.n_particles = random.randint(100, 500)
         self.color = color
 
         # particle Array
@@ -33,3 +33,8 @@ class Explosion:
         tf = pygame.time.get_ticks()/1000
         for particle in self.particle_group:
             particle.move_particle(tf)
+
+    def delete_particles(self):
+        for particle in self.particle_group:
+            if particle.center[1] > self.settings.HEIGHT:
+                self.particle_group.remove(particle)

@@ -21,7 +21,7 @@ class Shot:
         # get initial time in seconds
         self.initial_time = t0
         self.y_speed = -10
-        self.v0 = random.randint(7, 15)
+        self.v0 = random.randint(7, 12)
 
     def draw_shot(self):
         pygame.draw.circle(self.screen, self.color, self.center, self.radius)

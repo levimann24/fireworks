@@ -44,6 +44,7 @@ class Fireworks:
             shot.draw_shot()
         for explosion in self.explosion_group:
             explosion.draw_explosion()
+        self._delete_explosions()
         pygame.display.flip()
 
     def on_cleanup(self):
@@ -74,10 +75,17 @@ class Fireworks:
         n_explosion = explosion.Explosion(self, center, color)
         self.explosion_group.append(n_explosion)
 
-
-        # TODO: Create a new class with n_number of particles for explosion.
         # TODO: Delete the explosion after certain time, or have the color fade to black
         # TODO: You could have some shift to white and then disappear.
+
+    def _delete_explosions(self):
+        for explosion in self.explosion_group:
+            explosion.delete_particles()
+            if len(explosion.particle_group) == 0:
+                self.explosion_group.remove(explosion)
+        print(len(self.explosion_group))
+
+
 if __name__ == "__main__":
     game = Fireworks()
     game.on_execute()
