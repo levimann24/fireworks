@@ -8,6 +8,7 @@ import explosion
 class Fireworks:
     def __init__(self):
         pygame.init()
+        self.explosion_sound = pygame.mixer.Sound("Sounds/explosion.wav")
         self.settings = settings.Settings()
 
         # initialize the screen

@@ -8,7 +8,7 @@ class Settings:
         # Firework settings
         self.s_radius = 2
         self.gravity = 6
-        self.n_shots = 5
+        self.n_shots = 3
 
         # particle settings
         self.p_radius = 1

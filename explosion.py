@@ -10,6 +10,7 @@ class Explosion:
         self.screen = main.screen
         self.screen_rect = self.screen.get_rect()
         self.t0 = pygame.time.get_ticks()/1000
+        self.sound = main.explosion_sound
 
         # intialize particles
         self.center = center
@@ -19,6 +20,7 @@ class Explosion:
         # particle Array
         self.particle_group = []
         self.create_particles()
+        pygame.mixer.Sound.play(self.sound)
 
     def create_particles(self):
         while len(self.particle_group) < self.n_particles:
